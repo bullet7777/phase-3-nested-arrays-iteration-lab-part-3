@@ -1,20 +1,25 @@
+require 'pry'
+
 def join_nested_strings(src)
   # src will be an Array of Arrays of Strings and Integers
   # Combine all Strings present in the AoA into a single value and return it
-  count = 0
-sum = 0
+ row_index=0
+total = ''
 
-while count < src.length do
+while row_index < src.length do
+  element_index = 0
 
-  inner_count = 0
-  while inner_count < src[count].length do
-    if src[count][inner_count] == ""
-    sum = sum + src[count][inner_count] 
-    inner_count += 1
-  end
+  while element_index < src[row_index].length do
 
-  count += 1
+   # if (src[row_index][element_index]).is_a?(Integer) != true
+    total = total + src[row_index][element_index] 
+   element_index += 1
+    
+   #end
+ end
+  row_index += 1
+ end
+  total
 end
 
-sum
-end
+
